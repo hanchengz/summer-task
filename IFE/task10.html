@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		@media screen and (min-width: 640px) {
+			#container{
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+		@media screen and (max-width: 640px) {
+			#container{
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: flex-start;
+			}
+			#box4{
+				order: -1;
+				margin-bottom: 20px;
+			}
+		}
+		#container{
+			display: -wekit-flex;
+			display: flex;
+			padding: 20px;
+			border: 1px solid gray;
+		}
+		#container div{
+			width: 150px;
+			border: 1px solid red;
+		}
+		#container #box4{
+			border-color: blue;
+		} 
+		#box1{
+			height: 120px;
+		}
+		#box2{
+			height: 100px;
+		}
+		#box3{
+			height: 40px;
+		}
+		#box4{
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+		<div id="box4"></div>
+	</div>	
+</body>
+</html>

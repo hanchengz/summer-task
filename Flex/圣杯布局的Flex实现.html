@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			display: -webkit-flex;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+		#header{
+			background-color: #2a4;
+			width: 100%
+
+		}
+		#bd{
+			display: flex;
+			justify-content: space-between;
+		}
+		#main{
+			background-color: #aaa;
+			margin: 0 20px;
+		}
+		#left{
+			background-color: #25a;
+			width: 100px;
+			order: -1;
+		}
+		#right{
+			background-color: #98f;
+			width: 100px;
+		}
+		#footer{
+			background-color: #28c;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">header</div>
+		<div id="bd">
+			<div id="main">main main main main main main main main main main main main main main main main main main main </div>
+			<div id="left">left</div>
+			<div id="right">right</div>
+		</div>
+		<div id="footer">footer</div>
+	</div>
+</body>
+</html>
