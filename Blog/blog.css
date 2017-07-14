@@ -92,8 +92,10 @@ a::after {
 
 footer{
 	/*clear: both;*/
+	width: 50%;
 	text-align: center;
-	margin-top: 9em;
+	margin: 0 auto;
+	margin-top: 12em;
 	padding: 1em 0 1.5em 0;
-	border-top: 1px solid #865656;
+	border-top: 1px dashed rgba(249, 164, 164, 0.61);
 }

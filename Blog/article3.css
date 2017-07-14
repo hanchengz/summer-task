@@ -73,3 +73,21 @@ article > blockquote{
 article > blockquote > ol{
 	padding: 0 2em;
 }
+footer{
+	/*clear: both;*/
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 12em;
+	padding: 1em 0 1.5em 0;
+	border-top: 1px dashed rgba(249, 164, 164, 0.61);
+}
+article > a{
+	display: inline-block;
+	text-decoration: none;
+	font-size: 1.3em;
+	/*color: #5f2c31;*/
+	padding: .5em;
+	margin: .8em 1.5em .5em 0;
+	float: right;
+}
