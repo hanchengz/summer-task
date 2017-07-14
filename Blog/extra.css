@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-size: 14px;
+}
+body{
+	max-width: 700px;
+	margin: 0 auto;
+	background-color: #000;
+	color: #865656;
+}
+header{
+	padding-bottom: 1.5em;
+	text-align: center;
+	font-size: 1.5em;
+}
+header > img{
+	width: 100%;
+	margin-bottom: 20px;
+}
+article{
+	text-align: center;
+	font-size: 1.3em;
+	border-top: 1px dashed #865656;
+}
+article > h2{
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+article > p{
+	max-height: 300px;
+	overflow: hidden;
+}
+article > a{
+	display: inline-block;
+	text-decoration: none;
+	font-size: 1.1em;
+	color: #5f2c31;
+	padding: .5em;
+	margin: .8em 0 .5em 0;
+	margin-right: -25em;
+} 
