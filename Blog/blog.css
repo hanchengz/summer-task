@@ -6,7 +6,7 @@ html{
 	font-size: 14px;
 }
 body{
-	max-width: 700px;
+	max-width: 50em;
 	margin: 0 auto;
 	background-color: #000;
 	color: #865656;
@@ -20,26 +20,79 @@ header > img{
 	width: 100%;
 	margin-bottom: 20px;
 }
-article{
+article {
+	position: relative;
+	max-height: 20em;
 	text-align: center;
 	font-size: 1.3em;
 	border-top: 1px dashed #865656;
+	/*padding: .8em;*/
 	overflow: hidden;
+	clear: both;
+	margin-bottom: 7em; 
 }
+
+article::after {
+	content: ""; 
+	position: absolute;
+	width: 100%;
+	height: 100%; 
+	left: 0; 
+	top: 0; 
+	background-image: repeating-linear-gradient(
+		0deg,
+		#000,
+		transparent,
+		transparent
+	); 
+}
+
 article > h2{
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 }
-article > p{
+/*article > p{
 	max-height: 300px;
 	overflow: hidden;
-}
-article > a{
+}*/
+a {
+	/*position: relative;*/
 	display: inline-block;
-	text-decoration: none;
-	font-size: 1.1em;
-	color: #5f2c31;
-	padding: .5em;
-	margin: .8em 0 .5em 0;
-	margin-right: -25em;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #5f2c31;
+    /* padding: .5em; */
+    box-sizing: border-box;
+    margin: .8em 1.5em .5em 0;
+    /* margin-right: -25em; */
+    /* float: right; */
+    position: absolute;
+    bottom: 5%;
+    z-index: 999;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    perspective: 400px;
+    color: rgba(249, 164, 164, 0.61);
 } 
+
+a::after {
+	content: "Read More"; 
+	position: absolute;
+	left: 0; 
+	width: 100%;
+	/*top: 100%;*/
+	bottom: -1em;
+	text-align: center;
+	transform: scaleY(-1) rotateX(-65deg);
+	opacity: 0.6;
+
+}
+
+footer{
+	clear: both;
+	text-align: center;
+	margin-top: 9em;
+	padding: 1em 0 1.5em 0;
+	border-top: 1px solid #865656;
+}

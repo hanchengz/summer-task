@@ -29,6 +29,10 @@ article > h2{
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 }
+article > h2{
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
 article > p{
 	max-height: 300px;
 	overflow: hidden;
@@ -36,9 +40,16 @@ article > p{
 article > a{
 	display: inline-block;
 	text-decoration: none;
-	font-size: 1.1em;
+	font-size: 1.3em;
 	color: #5f2c31;
 	padding: .5em;
-	margin: .8em 0 .5em 0;
-	margin-right: -25em;
-} 
+	margin: .8em 1.5em .5em 0;
+	float: right;
+}
+footer{
+	clear: both;
+	text-align: center;
+	margin-top: 9em;
+	padding: 1em 0 1.5em 0;
+	border-top: 1px solid #865656;
+}

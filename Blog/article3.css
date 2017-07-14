@@ -1,0 +1,75 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-size: 14px;
+}
+body{
+	max-width: 50em;
+	margin: 0 auto;
+	background-color: #000;
+	color: #865656;
+}
+header{
+	padding-bottom: 1.5em;
+	text-align: center;
+	font-size: 1.5em;
+}
+header > img{
+	width: 100%;
+	margin-bottom: 20px;
+}
+article{
+	/*text-align: center;*/
+	font-size: 1.3em;
+	border-top: 1px dashed #865656;
+	/*padding: .8em;*/
+	/*overflow: hidden;*/
+	/*clear: both;*/
+}
+article > h1{
+	margin-top: 2.5em;
+	padding-bottom: .3em;
+	border-bottom: 1px solid #865656;
+}
+article > h2{
+	margin: 1.5em 0 1em 0;
+}
+article p{
+	margin: 1em 0;
+}
+article > ol{
+	padding: 0 1.5em;
+}
+article > ol > li + li{
+	margin-top: .8em;
+}
+article > hr{
+	height: 1px;
+	width: 50%;
+	border: none;
+	background-color: #865656;
+	margin: 4em auto;
+}
+article > ul{
+	padding: 0 1.5em;
+}
+article > ul li{
+	padding: .3em 0;
+}
+article > ul > li > ul{
+	border-top: 1px solid #865656;
+	padding: 0 2em;
+}
+article > ul > li > ul::before{
+	content: '+';
+	float: right;
+	margin-top: -1.4em;
+}
+article > blockquote{
+	color: #865656;
+}
+article > blockquote > ol{
+	padding: 0 2em;
+}
