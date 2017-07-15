@@ -20,15 +20,19 @@ header > img{
 	width: 100%;
 	margin-bottom: 20px;
 }
+
+
+
+
+
+
+
+
 article {
 	position: relative;
-	/*max-height: 20em;*/
 	text-align: center;
 	font-size: 1.3em;
 	border-top: 1px dashed rgba(134,86,86,.33);
-	/*padding: .8em;*/
-	/*overflow: hidden;*/
-	/*clear: both;*/
 	padding: 2em;
 	margin-bottom: 7em; 
 }
@@ -49,7 +53,6 @@ article::after {
 }
 
 article > h2{
-	/*margin-top: 1.5em;*/
 	margin-bottom: 1em;
 }
 article > div{
@@ -57,16 +60,12 @@ article > div{
 	overflow: hidden;
 }
 a {
-	/*position: relative;*/
 	display: inline-block;
     text-decoration: none;
     font-size: 1.3em;
     color: #5f2c31;
-    /* padding: .5em; */
     box-sizing: border-box;
     margin: .8em 1.5em .5em 0;
-    /* margin-right: -25em; */
-    /* float: right; */
     position: absolute;
     bottom: -2em;
     z-index: 999;
@@ -82,7 +81,6 @@ a::after {
 	position: absolute;
 	left: 0; 
 	width: 100%;
-	/*top: 100%;*/
 	bottom: -1em;
 	text-align: center;
 	transform: scaleY(-1) rotateX(-65deg);
@@ -91,7 +89,6 @@ a::after {
 }
 
 footer{
-	/*clear: both;*/
 	width: 50%;
 	text-align: center;
 	margin: 0 auto;
