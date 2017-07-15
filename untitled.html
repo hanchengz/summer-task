@@ -17,9 +17,9 @@
 			var amount2;
 			var amount3;
 			if (width <= 1340) {
-				amount1 = 15;
-				amount2 = 30;
-				amount3 = 30;
+				amount1 = 10;
+				amount2 = 25;
+				amount3 = 25;
 			}
 			if (width > 1340 && width < 1900) {
 				amount1 = 60;
@@ -50,7 +50,7 @@
 						var c3 = GetRandomNum(240,255);
 						var r = GetRandomNum(20,45);
 						var x = GetRandomNum(r,width - r);
-						var y = GetRandomNum(r,height - 2.5*r);
+						var y = GetRandomNum(r,height - 6*r);
 						var heart = new Path2D();
 						ctx.fillStyle = 'rgb('+c1+','+c2+','+c3+')';
 						heart.arc(x,y,r,0,Math.PI,true);
