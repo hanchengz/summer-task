@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script type="text/javascript">
+		// var h = 0;
+		window.onload = function(){
+			var width = document.body.clientWidth;
+			var height = document.body.clientHeight;
+			var canvas = document.getElementById('heart');
+			var p = document.getElementById('txt');
+			var h = 0;
+			canvas.setAttribute("width",width);
+			canvas.setAttribute("height",height);
+			var amount1;
+			var amount2;
+			var amount3;
+			if (width <= 1340) {
+				amount1 = 15;
+				amount2 = 30;
+				amount3 = 30;
+			}
+			if (width > 1340 && width < 1900) {
+				amount1 = 60;
+				amount2 = 35;
+				amount3 = 35;
+			}
+			if (width > 1900) {
+				amount1 = 75;
+				amount2 = 45;
+				amount3 = 45;
+			}
+			window.onresize = function(){
+				history.go(0);
+				h = 0;
+			}
+
+			function GetRandomNum(min,max){
+				var range = max - min;
+				var rand = Math.random();
+				return(min + Math.round(range * rand));
+			}
+			function draw(amount1,amount2,amount3){
+				if (canvas.getContext) {
+					var ctx = canvas.getContext('2d');
+					for (var i = 0; i < amount1; i++) {
+						var c1 = GetRandomNum(240,255);
+						var c2 = GetRandomNum(175,220);
+						var c3 = GetRandomNum(240,255);
+						var r = GetRandomNum(20,45);
+						var x = GetRandomNum(r,width - r);
+						var y = GetRandomNum(r,height - 2.5*r);
+						var heart = new Path2D();
+						ctx.fillStyle = 'rgb('+c1+','+c2+','+c3+')';
+						heart.arc(x,y,r,0,Math.PI,true);
+						heart.arc(x + 2*r,y,r,0,Math.PI,true);
+						heart.moveTo(x - r,y);
+						heart.bezierCurveTo(x - r,y + r,x - 0.5*r,y + 1.5*r,x + r,y + 2.5*r);
+						heart.bezierCurveTo(x + 2.5*r,y + 1.5*r,x + 3*r,y + r,x + 3*r,y);
+						ctx.fill(heart);
+					}
+					for (var i = 0; i < amount2; i++) {
+						var c1 = GetRandomNum(160,215);
+						var c2 = GetRandomNum(230,255);
+						var c3 = GetRandomNum(230,255);
+						var r = GetRandomNum(20,30);
+						var x = GetRandomNum(r,width - r);
+						var y = GetRandomNum(r,height - r);
+
+						var heart = new Path2D();
+						ctx.fillStyle = 'rgb('+c1+','+c2+','+c3+')';
+						heart.arc(x,y,r,0,Math.PI,true);
+						heart.arc(x + 2*r,y,r,0,Math.PI,true);
+						heart.moveTo(x - r,y);
+						heart.bezierCurveTo(x - r,y + r,x - 0.5*r,y + 1.5*r,x + r,y + 2.5*r);
+						heart.bezierCurveTo(x + 2.5*r,y + 1.5*r,x + 3*r,y + r,x + 3*r,y);
+						ctx.fill(heart);
+					}
+					for (var i = 0; i < amount3; i++) {
+						var c1 = GetRandomNum(160,215);
+						var c2 = GetRandomNum(230,255);
+						var c3 = GetRandomNum(230,2355);
+						var r = GetRandomNum(5,10);
+						var x = GetRandomNum(r,width - r);
+						var y = GetRandomNum(r,height - r);
+
+						var heart = new Path2D();
+						ctx.fillStyle = 'rgb('+c1+','+c2+','+c3+')';
+						heart.arc(x,y,r,0,Math.PI,true);
+						heart.arc(x + 2*r,y,r,0,Math.PI,true);
+						heart.moveTo(x - r,y);
+						heart.bezierCurveTo(x - r,y + r,x - 0.5*r,y + 1.5*r,x + r,y + 2.5*r);
+						heart.bezierCurveTo(x + 2.5*r,y + 1.5*r,x + 3*r,y + r,x + 3*r,y);
+						ctx.fill(heart);
+					}
+					}else {
+
+					}
+			}
+			txt.onclick = function(){
+				if (h == 0) {
+					draw(amount1,amount2,amount3);
+					txt.parentNode.removeChild(txt);
+					h += 1;
+				}else {
+					
+				}
+			}
+			canvas.onclick = function(){
+				if ( h >= 1) {
+					h += 1;
+					if (h == 10) {
+						heart.parentNode.removeChild(heart);
+						var para = document.createElement('p');
+						var container = document.getElementById('container');
+						container.appendChild(para);
+						var text = document.createTextNode('love u.');
+						para.appendChild(text);
+					}
+				}
+			}
+		}
+	</script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		#heart{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		p{	width: 50px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			margin-left: 10px;
+		}
+		#container p{
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<canvas id="heart"></canvas>
+	<p id="txt">
+	傻逼羊哈哈哈
+	</p>
+</body>
+</html>
