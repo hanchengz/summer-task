@@ -3,9 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>IFE JavaScript Task 01</title>
+    <style type="text/css">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      ul{
+        margin: 0 auto;
+        text-align: center;
+        list-style: none;
+      }
+      #sort-btn{
+        display: block;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 2px;
+        margin: 10px auto;
+      }
+    </style>
   </head>
 <body>
-
   <ul id="source">
     <li>北京空气质量：<b>90</b></li>
     <li>上海空气质量：<b>70</b></li>
@@ -28,7 +45,12 @@
   <button id="sort-btn">排序</button>
 
 <script type="text/javascript">
-var btn = document.getElementById("sort-btn");
+var source = document.getElementById('source');
+var resorted = document.getElementById('resort');
+var btn = document.getElementById('sort-btn');
+var lis = source.children;
+var txts = [];
+var state = false;
 /**
  * getData方法
  * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
@@ -38,10 +60,14 @@ function getData() {
   /*
   coding here
   */
-  var src = document.getElementById("source");
-  var data = src.children.innerText;
-  // data = Array.prototype.slice.call(data);          //上一行得到的并不是数组，而是累数组，这行代码将其处理成数组
-
+  var data = [];
+  for (var i = 0; i < lis.length; i++) {
+    txts.push(lis[i].innerText);
+    data.push([
+      txts[i].slice(0,2),
+      parseInt(txts[i].slice(7,9))
+    ]);
+  }
   /*
   data = [
     ["北京", 90],
@@ -49,43 +75,49 @@ function getData() {
     ……
   ]
   */
-
   return data;
-
 }
-var test = getData();
 /**
  * sortAqiData
  * 按空气质量对data进行从小到大的排序
  * 返回一个排序后的数组
  */
-// function sortAqiData(data) {
-//   function sortNum(a,b){
-//     return b[1] - a[1];
-//   }
-//   test = getData().sort(sortNum);
-// }
-
+function sortAqiData(data) {
+  function sortNum(a,b){
+    return a[1] - b[1];
+  }
+  data.sort(sortNum);
+  return data;
+}
 /**
  * render
  * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
- * 格式见ul中的注释的部分
+ * 格式见ul中的注释的部分render
  */
 function render(data) {
-
+  for (var i = 0; i < data.length; i++) {
+    var li = document.createElement('li');
+    resorted.appendChild(li);
+    li.innerText = data[i][0] + ': ' + data[i][1];
+  }
 }
-
+function clearEle(){
+  source.parentNode.removeChild(source);
+}
 function btnHandle() {
-  var aqiData = getData();
-  aqiData = sortAqiData(aqiData);
-  render(aqiData);
+  if (state == false) {
+    var aqiData = getData();
+    aqiData = sortAqiData(aqiData);
+    render(aqiData);
+    clearEle();
+    state = true;
+  }
 }
-
 
 function init() {
-  btn.onclick = btnHandle();
-  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
 
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+  btn.onclick = btnHandle;
 }
 
 init();
