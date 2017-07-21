@@ -62,7 +62,7 @@ function draw () {
 
 		function test(which,length){
 			var pos = getPos(which,length);
-			// ctx.strokeStyle = 'rgb('+h+','+m + s+','+s * r/5+')';
+			ctx.strokeStyle = 'rgb('+h+','+m + s+','+s * r/5+')';
 			// console.log(h,m,s);
 			ctx.beginPath();
 			ctx.moveTo(x,y);
@@ -70,7 +70,7 @@ function draw () {
 			ctx.closePath();
 			ctx.stroke();
 		}
-		test(5 * (h + m/60),r - 30);
+		test(5 * (h + m/60),r - 35);
 		test(m,r - 12);
 		test(s,r);
 	}
