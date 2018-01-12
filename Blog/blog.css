@@ -37,12 +37,13 @@ article::after {
 	height: 100%; 
 	left: 0; 
 	top: 0; 
-	background-image: repeating-linear-gradient(
+	background: -webkit-linear-gradient(bottom,#000,transparent);
+/*	background-image: repeating-linear-gradient(
 		0deg,
 		#000,
 		transparent,
 		transparent
-	); 
+	);*/ 
 }
 
 article > h2{

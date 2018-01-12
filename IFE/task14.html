@@ -42,6 +42,35 @@ var aqiData = [
     return b[1] - a[1];
   }
   upper.sort(sortNum);
+
+var test = [
+        {
+            "username": "admin",
+            "iat": '1501918674815',
+            "status": '1'
+        },
+        {
+            "username": "test",
+            "iat": '0',
+            "status": '0'
+        },
+        {
+            "username": "W-46ec",
+            "iat": '1501918686333',
+            "status": '1'
+        }
+    ];
+    function abcd(a,b){
+      return b.iat - a.iat;
+    }
+test.sort(abcd);
+console.log(test);
+
+
+
+
+
+
   for (var i = 0; i < upper.length; i++) {
     var li = document.createElement("li");
     list.appendChild(li);

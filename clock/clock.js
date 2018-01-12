@@ -19,7 +19,7 @@ function getPos(a,b){
 //画图
 function draw () {
 	ctx.clearRect(0,0,2 * x,2 * y);
-
+	//大表盘的圆
 	ctx.strokeStyle = 'rgb(0,0,0)';
 	arcPath(x,y,r);
 	ctx.stroke();
